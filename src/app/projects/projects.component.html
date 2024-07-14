@@ -1,4 +1,4 @@
-<section id="projects" class="bg-white dark:bg-gray-900">
+<section id="projects" class="bg dark:bg-gray-900">
   <div class="container px-6 py-10 mx-auto">
     <h1
       class="text-2xl font-semibold text-center text-gray-800 capitalize lg:text-3xl dark:text-white"
@@ -7,145 +7,38 @@
     </h1>
 
     <div class="grid grid-cols-1 gap-8 mt-8 xl:mt-12 xl:gap-12 lg:grid-cols-2">
-      <div
-        class="flex items-end overflow-hidden bg-cover rounded-lg h-96"
-        style="
-          background-image: url('https://images.unsplash.com/photo-1621111848501-8d3634f82336?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1565&q=80');
-        "
+      <app-project-card
+        title="Janken101"
+        codeLink="https://github.com/DavidSilvente/Janken101/tree/main/rps-101-23-main"
+        previewLink="https://svgl.vercel.app/"
+        imageUrl="https://images.unsplash.com/photo-1621111848501-8d3634f82336?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1565&q=80"
       >
-        <div
-          class="w-full max-w-xs px-8 py-4 overflow-hidden rounded-b-lg backdrop-blur-sm bg-white/60 dark:bg-gray-800/60"
-        >
-          <h2
-            class="mt-4 text-xl font-semibold text-gray-800 capitalize dark:text-white"
-          >
-            Best website collections
-          </h2>
-          <div class="flex items-center gap-3 sm:gap-x-5">
-            <a
-              href="https://github.com/pheralb/svgl"
-              role="link"
-              class="inline-flex items-center justify-center gap-2 px-3 py-2 space-x-2 text-base text-white transition bg-gray-800 border border-gray-600 focus-visible:ring-yellow-500/80 text-md hover:bg-gray-800 hover:border-gray-900 group max-w-fit rounded-xl hover:text-white focus:outline-none focus-visible:outline-none focus-visible:ring focus-visible:ring-white focus-visible:ring-offset-2 active:bg-black"
-            >
-              <img src="assets/github.svg">
-              Code
-            </a>
-            <a
-              href="https://svgl.vercel.app/"
-              role="link"
-              class="inline-flex items-center justify-center gap-2 px-3 py-2 space-x-2 text-base text-white transition bg-gray-800 border border-gray-600 focus-visible:ring-yellow-500/80 text-md hover:bg-gray-800 hover:border-gray-900 group max-w-fit rounded-xl hover:text-white focus:outline-none focus-visible:outline-none focus-visible:ring focus-visible:ring-white focus-visible:ring-offset-2 active:bg-black"
-            >
-            <img src="assets/preview.svg">
-              Preview
-            </a>
-          </div>
-        </div>
-      </div>
+      </app-project-card>
 
-      <div
-        class="flex items-end overflow-hidden bg-cover rounded-lg h-96"
-        style="
-          background-image: url('https://images.unsplash.com/photo-1621111848501-8d3634f82336?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1565&q=80');
-        "
+      <app-project-card
+        title="Problema NRP"
+        codeLink="https://github.com/DavidSilvente/Proyecto-nrp-con-interdependencias/tree/main"
+        previewLink="https://svgl.vercel.app/"
+        imageUrl="assets/messi.png"
       >
-        <div
-          class="w-full max-w-xs px-8 py-4 overflow-hidden rounded-b-lg backdrop-blur-sm bg-white/60 dark:bg-gray-800/60"
-        >
-          <h2
-            class="mt-4 text-xl font-semibold text-gray-800 capitalize dark:text-white"
-          >
-            Best website collections
-          </h2>
-          <div class="flex items-center gap-3 sm:gap-x-5">
-            <a
-              href="https://github.com/pheralb/svgl"
-              role="link"
-              class="inline-flex items-center justify-center gap-2 px-3 py-2 space-x-2 text-base text-white transition bg-gray-800 border border-gray-600 focus-visible:ring-yellow-500/80 text-md hover:bg-gray-800 hover:border-gray-900 group max-w-fit rounded-xl hover:text-white focus:outline-none focus-visible:outline-none focus-visible:ring focus-visible:ring-white focus-visible:ring-offset-2 active:bg-black"
-            >
-              <img src="assets/github.svg">
-              Code
-            </a>
-            <a
-              href="https://svgl.vercel.app/"
-              role="link"
-              class="inline-flex items-center justify-center gap-2 px-3 py-2 space-x-2 text-base text-white transition bg-gray-800 border border-gray-600 focus-visible:ring-yellow-500/80 text-md hover:bg-gray-800 hover:border-gray-900 group max-w-fit rounded-xl hover:text-white focus:outline-none focus-visible:outline-none focus-visible:ring focus-visible:ring-white focus-visible:ring-offset-2 active:bg-black"
-            >
-            <img src="assets/preview.svg">
-              Preview
-            </a>
-          </div>
-        </div>
-      </div>
+      </app-project-card>
 
-      <div
-        class="flex items-end overflow-hidden bg-cover rounded-lg h-96"
-        style="
-          background-image: url('https://images.unsplash.com/photo-1621111848501-8d3634f82336?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1565&q=80');
-        "
+      <!-- app.component.html -->
+      <app-project-card
+        title="Crystalite"
+        codeLink="https://github.com/DavidSilvente/Crystalite"
+        previewLink="https://svgl.vercel.app/"
+        imageUrl="https://images.unsplash.com/photo-1621111848501-8d3634f82336?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1565&q=80"
       >
-        <div
-          class="w-full max-w-xs px-8 py-4 overflow-hidden rounded-b-lg backdrop-blur-sm bg-white/60 dark:bg-gray-800/60"
-        >
-          <h2
-            class="mt-4 text-xl font-semibold text-gray-800 capitalize dark:text-white"
-          >
-            Best website collections
-          </h2>
-          <div class="flex items-center gap-3 sm:gap-x-5">
-            <a
-              href="https://github.com/pheralb/svgl"
-              role="link"
-              class="inline-flex items-center justify-center gap-2 px-3 py-2 space-x-2 text-base text-white transition bg-gray-800 border border-gray-600 focus-visible:ring-yellow-500/80 text-md hover:bg-gray-800 hover:border-gray-900 group max-w-fit rounded-xl hover:text-white focus:outline-none focus-visible:outline-none focus-visible:ring focus-visible:ring-white focus-visible:ring-offset-2 active:bg-black"
-            >
-              <img src="assets/github.svg">
-              Code
-            </a>
-            <a
-              href="https://svgl.vercel.app/"
-              role="link"
-              class="inline-flex items-center justify-center gap-2 px-3 py-2 space-x-2 text-base text-white transition bg-gray-800 border border-gray-600 focus-visible:ring-yellow-500/80 text-md hover:bg-gray-800 hover:border-gray-900 group max-w-fit rounded-xl hover:text-white focus:outline-none focus-visible:outline-none focus-visible:ring focus-visible:ring-white focus-visible:ring-offset-2 active:bg-black"
-            >
-            <img src="assets/preview.svg">
-              Preview
-            </a>
-          </div>
-        </div>
-      </div>
+      </app-project-card>
 
-      <div
-        class="flex items-end overflow-hidden bg-cover rounded-lg h-96"
-        style="
-          background-image: url('https://images.unsplash.com/photo-1621111848501-8d3634f82336?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1565&q=80');
-        "
+      <app-project-card
+        title="Project Default"
+        codeLink="https://github.com/DavidSilvente/tfg_cine_app"
+        previewLink="https://svgl.vercel.app/"
+        imageUrl="https://images.unsplash.com/photo-1621111848501-8d3634f82336?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1565&q=80"
       >
-        <div
-          class="w-full max-w-xs px-8 py-4 overflow-hidden rounded-b-lg backdrop-blur-sm bg-white/60 dark:bg-gray-800/60"
-        >
-          <h2
-            class="mt-4 text-xl font-semibold text-gray-800 capitalize dark:text-white"
-          >
-            Best website collections
-          </h2>
-          <div class="flex items-center gap-3 sm:gap-x-5">
-            <a
-              href="https://github.com/pheralb/svgl"
-              role="link"
-              class="inline-flex items-center justify-center gap-2 px-3 py-2 space-x-2 text-base text-white transition bg-gray-800 border border-gray-600 focus-visible:ring-yellow-500/80 text-md hover:bg-gray-800 hover:border-gray-900 group max-w-fit rounded-xl hover:text-white focus:outline-none focus-visible:outline-none focus-visible:ring focus-visible:ring-white focus-visible:ring-offset-2 active:bg-black"
-            >
-              <img src="assets/github.svg">
-              Code
-            </a>
-            <a
-              href="https://svgl.vercel.app/"
-              role="link"
-              class="inline-flex items-center justify-center gap-2 px-3 py-2 space-x-2 text-base text-white transition bg-gray-800 border border-gray-600 focus-visible:ring-yellow-500/80 text-md hover:bg-gray-800 hover:border-gray-900 group max-w-fit rounded-xl hover:text-white focus:outline-none focus-visible:outline-none focus-visible:ring focus-visible:ring-white focus-visible:ring-offset-2 active:bg-black"
-            >
-            <img src="assets/preview.svg">
-              Preview
-            </a>
-          </div>
-        </div>
-      </div>
+      </app-project-card>
     </div>
   </div>
 </section>

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -15,4 +15,15 @@ export class AppComponent {
     }
   }
 
+  @HostListener('window:scroll', [])
+  onWindowScroll() {
+    const navbar = document.getElementById('navbar');
+    if (window.pageYOffset > 50) { // Adjust this value as needed
+      navbar?.classList.add('bg-white', 'shadow-lg');
+      navbar?.classList.remove('bg-transparent');
+    } else {
+      navbar?.classList.add('bg-transparent');
+      navbar?.classList.remove('bg-white', 'shadow-lg');
+    }
+  }
 }
