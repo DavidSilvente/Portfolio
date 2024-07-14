@@ -1,0 +1,15 @@
+.max-w-xs {
+  max-width: 100% /* Ajusta el valor según sea necesario */
+}
+
+.svg-icon {
+  display: block;
+  transform: scale(.6);
+  max-height: 50px;
+}
+
+.svg-container {
+  display: flex;
+  align-items: center;
+}
+

@@ -1,10 +1,22 @@
-<nav>
-  <a routerLink="/home">Home</a>
-  <a routerLink="/projects">Proyectos</a>
-  <a routerLink="/about">About</a>
-  <a routerLink="/contact">Contacto</a>
-</nav>
-
-
+<div class="navbar bg-base-100">
+  <div class="navbar-center flex-1 justify-center lg:flex">
+    <ul class="menu menu-horizontal px-1">
+      <li><a (click)="scrollTo('me')">Home</a></li>
+      <li>
+        <details>
+          <summary>Proyectos</summary>
+          <ul class="p-2">
+            <li><a>Submenu 1</a></li>
+            <li><a>Submenu 2</a></li>
+            <li><a>Submenu 3</a></li>
+            <li><a>Submenu 4</a></li>
+          </ul>
+        </details>
+      </li>
+      <li><a (click)="scrollTo('about')">About</a></li>
+      <li><a (click)="scrollTo('contact')">Contacto</a></li>
+    </ul>
+  </div>
+</div>
 
 <router-outlet></router-outlet>

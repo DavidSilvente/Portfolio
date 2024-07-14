@@ -7,4 +7,12 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Portfolio';
+
+  scrollTo(section: string) {
+    const element = document.getElementById(section);
+    if(element) {
+      element.scrollIntoView({behavior: 'smooth'});
+    }
+  }
+
 }
