@@ -1,5 +1,5 @@
 <header>
-  <div class="navbar">
+  <div id="navbar" class="navbar">
     <!-- Dropdown para dispositivos móviles -->
     <div class="navbar-start lg:hidden">
       <div class="dropdown">
@@ -41,10 +41,10 @@
       </div>
     </div>
     <!-- Navbar para pantallas grandes -->
-    <div id="navbar" class="navbar-center flex-1 justify-center hidden lg:flex">
+    <div class="navbar-center flex-1 justify-center hidden lg:flex">
       <ul class="menu menu-horizontal px-1">
-        <li><a (click)="scrollTo('me')">Home</a></li>
-        <li>
+        <li [class.active]="currentSection === 'me'"><a (click)="scrollTo('me')">Home</a></li>
+        <li [class.active]="currentSection === 'projects'">
           <details>
             <summary>Proyectos</summary>
             <ul class="p-2">
@@ -55,8 +55,8 @@
             </ul>
           </details>
         </li>
-        <li><a (click)="scrollTo('about')">About</a></li>
-        <li><a (click)="scrollTo('contact')">Contacto</a></li>
+        <li [class.active]="currentSection === 'about'"><a (click)="scrollTo('about')">About</a></li>
+        <li [class.active]="currentSection === 'contact'"><a (click)="scrollTo('contact')">Contacto</a></li>
       </ul>
     </div>
   </div>

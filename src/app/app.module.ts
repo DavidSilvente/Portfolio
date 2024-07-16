@@ -18,7 +18,7 @@ import { ProjectCardComponent } from './projects/project-card/project-card.compo
     AboutComponent,
     ProjectsComponent,
     ContactComponent,
-    ProjectCardComponent
+    ProjectCardComponent,
   ],
   imports: [
     BrowserModule,
