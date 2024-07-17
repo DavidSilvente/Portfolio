@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 })
 export class CorreoService {
 
-  private apiUrl = 'https://tu-api-de-correo.com/enviar'; // Reemplaza con tu URL real
+  private apiUrl = 'http://localhost:3000/enviar'; // Reemplaza con tu URL real
 
   constructor(private http: HttpClient) { }
 

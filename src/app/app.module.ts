@@ -7,9 +7,11 @@ import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
 import { ProjectsComponent } from './projects/projects.component';
 import { ContactComponent } from './contact/contact.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule   } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { ProjectCardComponent } from './projects/project-card/project-card.component';
+import { CorreoService } from './correo.service';
+import { MessageSuccessFailComponent } from './message-success-fail/message-success-fail.component';
 
 @NgModule({
   declarations: [
@@ -19,14 +21,16 @@ import { ProjectCardComponent } from './projects/project-card/project-card.compo
     ProjectsComponent,
     ContactComponent,
     ProjectCardComponent,
+    MessageSuccessFailComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
   ],
-  providers: [],
+  providers: [CorreoService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

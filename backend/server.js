@@ -2,9 +2,19 @@ require('dotenv').config();
 const express = require('express');
 const bodyParser = require('body-parser');
 const nodemailer = require('nodemailer');
+const cors = require('cors');
+
 const app = express();
 const port = 3000;
 
+// Middleware to enable CORS
+const corsOptions = {
+  origin: 'http://localhost:4200', // Your frontend URL
+  methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+  optionsSuccessStatus: 204,
+};
+
+app.use(cors(corsOptions));
 app.use(bodyParser.json());
 
 app.post('/enviar', (req, res) => {
@@ -28,10 +38,10 @@ app.post('/enviar', (req, res) => {
   transporter.sendMail(mailOptions, (error, info) => {
     if (error) {
       console.error('Error al enviar el correo:', error);
-      return res.status(500).send(error.toString());
+      return res.status(500).json({ error: error.toString() });
     }
     console.log('Correo enviado: ' + info.response);
-    res.send('Correo enviado: ' + info.response);
+    res.json({ message: 'Correo enviado', response: info.response });
   });
 });
 

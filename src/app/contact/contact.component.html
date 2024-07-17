@@ -1,104 +1,118 @@
 <section id="contact">
   <div class="gap-8 mt-8 xl:mt-12 xl:gap-12">
-  <h1
+    <h1
       class="text-2xl font-semibold text-center text-gray-800 capitalize lg:text-3xl dark:text-white"
     >
       Contacto
     </h1>
-  <form
-    (ngSubmit)="enviarCorreo()"
-    #contactoForm="ngForm"
-    class="max-w-sm mx-auto "
-  >
-    <div class="mb-5">
-      <label
-        for="nombre"
-        class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
-        >Nombre:</label
-      >
-      <input
-        type="text"
-        id="nombre"
-        class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light"
-        required
-        [(ngModel)]="contacto.nombre"
-        name="nombre"
-        #nombre="ngModel"
-      />
-      <div *ngIf="nombre.invalid && nombre.touched" class="error">
-        El nombre es requerido.
-      </div>
-    </div>
 
-    <div>
-      <label
-        for="email"
-        class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
-        >Correo Electrónico:</label
-      >
-      <input
-        type="email"
-        id="email"
-        class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light"
-        required
-        [(ngModel)]="contacto.email"
-        name="email"
-        #email="ngModel"
-      />
-      <div *ngIf="email.invalid && email.touched" class="error">
-        Un correo electrónico válido es requerido.
-      </div>
-    </div>
+    <app-message-success-fail
+      *ngIf="mensajeEnviado || envioFallido"
+      [type]="mensajeTipo"
+      (close)="closeSuccessMessage()"
+    ></app-message-success-fail>
 
-    <div>
-      <label
-        for="asunto"
-        class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
-        >Asunto:</label
-      >
-      <input
-        type="text"
-        id="asunto"
-        class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light"
-        required
-        [(ngModel)]="contacto.asunto"
-        name="asunto"
-        #asunto="ngModel"
-      />
-      <div *ngIf="asunto.invalid && asunto.touched" class="error">
-        El asunto es requerido.
-      </div>
-    </div>
-
-    <div>
-      <label
-        for="mensaje"
-        class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
-        >Mensaje:</label
-      >
-      <textarea
-        id="mensaje"
-        rows="5"
-        class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light"
-        required
-        [(ngModel)]="contacto.mensaje"
-        name="mensaje"
-        #mensaje="ngModel"
-      ></textarea>
-      <div *ngIf="mensaje.invalid && mensaje.touched" class="error">
-        El mensaje es requerido.
-      </div>
-    </div>
-    <br />
-    <button
-      type="submit"
-      class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-      [disabled]="contactoForm.invalid"
+    <form
+      (ngSubmit)="enviarCorreo(contactoForm)"
+      #contactoForm="ngForm"
+      class="max-w-sm mx-auto"
     >
-      Enviar
-    </button>
-  </form>
-
-  <div *ngIf="mensajeEnviado" class="success">¡Tu mensaje ha sido enviado!</div>
-</div>
+      <div class="mb-5">
+        <label
+          for="nombre"
+          class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+          >Nombre:</label
+        >
+        <input
+          type="text"
+          id="nombre"
+          class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light"
+          required
+          [(ngModel)]="contacto.nombre"
+          name="nombre"
+          #nombre="ngModel"
+        />
+        <div
+          *ngIf="nombre.invalid && nombre.touched"
+          class="error text-red-500 text-sm mt-1"
+        >
+          El nombre es requerido.
+        </div>
+      </div>
+      <div>
+        <label
+          for="email"
+          class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+          >Correo Electrónico:</label
+        >
+        <input
+          type="email"
+          id="email"
+          class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light"
+          required
+          [(ngModel)]="contacto.email"
+          name="email"
+          #email="ngModel"
+        />
+        <div
+          *ngIf="email.invalid && email.touched"
+          class="error text-red-500 text-sm mt-1"
+        >
+          Un correo electrónico válido es requerido.
+        </div>
+      </div>
+      <div>
+        <label
+          for="asunto"
+          class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+          >Asunto:</label
+        >
+        <input
+          type="text"
+          id="asunto"
+          class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light"
+          required
+          [(ngModel)]="contacto.asunto"
+          name="asunto"
+          #asunto="ngModel"
+        />
+        <div
+          *ngIf="asunto.invalid && asunto.touched"
+          class="error text-red-500 text-sm mt-1"
+        >
+          El asunto es requerido.
+        </div>
+      </div>
+      <div>
+        <label
+          for="mensaje"
+          class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+          >Mensaje:</label
+        >
+        <textarea
+          id="mensaje"
+          rows="5"
+          class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light"
+          required
+          [(ngModel)]="contacto.mensaje"
+          name="mensaje"
+          #mensaje="ngModel"
+        ></textarea>
+        <div
+          *ngIf="mensaje.invalid && mensaje.touched"
+          class="error text-red-500 text-sm mt-1"
+        >
+          El mensaje es requerido.
+        </div>
+      </div>
+      <br />
+      <button
+        type="submit"
+        class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+        [disabled]="contactoForm.invalid"
+      >
+        Enviar
+      </button>
+    </form>
+  </div>
 </section>
