@@ -14,3 +14,7 @@
 .navbar li.active {
   color: red; /* Cambia esto al color que prefieras */
 }
+
+.proyectos {
+ color: black !important
+}
