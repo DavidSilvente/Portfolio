@@ -33,6 +33,16 @@ header {
   padding: 2rem 8rem;
 }
 
+footer {
+  width: 100%;
+  bottom: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem 8rem;
+}
+
 .logo {
   color: #1e1e24;
   font-size: 1.2rem;

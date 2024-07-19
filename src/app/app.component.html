@@ -43,22 +43,59 @@
     <!-- Navbar para pantallas grandes -->
     <div class="navbar-center flex-1 justify-center hidden lg:flex">
       <ul class="menu menu-horizontal px-1">
-        <li [class.active]="currentSection === 'me'"><a (click)="scrollTo('me')">Home</a></li>
+        <li [class.active]="currentSection === 'me'">
+          <a (click)="scrollTo('me')">Home</a>
+        </li>
         <li [class.active]="currentSection === 'projects'">
           <details>
             <summary>Proyectos</summary>
             <ul class="p-2">
               <li><a class="proyectos">Janken101</a></li>
-                <li><a class="proyectos">NRP</a></li>
-                <li><a class="proyectos">Crystalite</a></li>
-                <li><a class="proyectos">Submenu 4</a></li>
+              <li><a class="proyectos">NRP</a></li>
+              <li><a class="proyectos">Crystalite</a></li>
+              <li><a class="proyectos">Submenu 4</a></li>
             </ul>
           </details>
         </li>
-        <li [class.active]="currentSection === 'about'"><a (click)="scrollTo('about')">About</a></li>
-        <li [class.active]="currentSection === 'contact'"><a (click)="scrollTo('contact')">Contacto</a></li>
+        <li [class.active]="currentSection === 'about'">
+          <a (click)="scrollTo('about')">About</a>
+        </li>
+        <li [class.active]="currentSection === 'contact'">
+          <a (click)="scrollTo('contact')">Contacto</a>
+        </li>
       </ul>
     </div>
   </div>
 </header>
-<router-outlet></router-outlet>
+
+<body><app-home></app-home></body>
+
+<footer>
+  <div
+    class="w-full mx-auto max-w-screen-xl p-4 md:flex md:items-center md:justify-between"
+  >
+    <span class="text-sm text-gray-500 sm:text-center dark:text-gray-400"
+      >© 2024
+      <a href="https://github.com/DavidSilvente" class="hover:underline">DavidSilvente</a>. All
+      Rights Reserved.
+    </span>
+    <ul
+      class="flex flex-wrap items-center mt-3 text-sm font-medium text-gray-500 dark:text-gray-400 sm:mt-0"
+    >
+      <li>
+        <a (click)="scrollTo('me')" class="cursor-pointer hover:underline me-4 md:me-6">Inicio</a>
+      </li>
+      <li>
+        <a (click)="scrollTo('projects')" class="cursor-pointer hover:underline me-4 md:me-6">Proyectos</a>
+      </li>
+      <li>
+        <a (click)="scrollTo('about')" class="cursor-pointer hover:underline me-4 md:me-6">About</a>
+      </li>
+      <li>
+        <a (click)="scrollTo('contact')" class="cursor-pointer hover:underline me-4 md:me-6">Contacto</a>
+      </li>
+    </ul>
+  </div>
+</footer>
+
+
