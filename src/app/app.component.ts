@@ -32,11 +32,11 @@ export class AppComponent {
     this.currentSection = currentSectionId // Default to 'me' if no section is found
 
     if (window.pageYOffset > 50) {
-      navbar?.classList.add('bg-white', 'shadow-lg');
+      navbar?.classList.add('bg-black', 'shadow-lg');
       navbar?.classList.remove('bg-transparent');
     } else {
       navbar?.classList.add('bg-transparent');
-      navbar?.classList.remove('bg-white', 'shadow-lg');
+      navbar?.classList.remove('bg-black', 'shadow-lg');
     }
   }
 }

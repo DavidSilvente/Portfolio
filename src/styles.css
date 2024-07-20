@@ -17,8 +17,8 @@ html {
 }
 
 body {
-  background-color: #f7f7f2;
-  color: #1e1e24;
+    background-color: #1f242d;
+    color: #fff;
 }
 
 header {
@@ -41,6 +41,34 @@ footer {
   align-items: center;
   justify-content: center;
   padding: 1.5rem 8rem;
+  background-color: #1f242d;
+  color: #fff;
+}
+
+:root {
+  --bg-color: #1f242d;
+  --secong-bg-color: #323946;
+  --text-color: #fff;
+  --main-color: #C70039;
+}
+
+span {
+  color: var(--main-color);
+}
+
+.navbar a {
+  color: var(--text-color);
+  transition: .3s;
+}
+
+.navbar li.active a, .navbar li.active {
+  color: var(--main-color); /* Cambia esto al color que prefieras */
+}
+
+
+.navbar a:hover,
+.navbar li:hover {
+  color: var(--main-color);
 }
 
 .logo {
@@ -54,6 +82,12 @@ footer {
   background-color: white !important;
   border-radius: 9999px;
   width: 40% !important;/* Fondo blanco cuando se hace scroll */
+}
+
+.bg-black {
+    background-color: black !important;
+    border-radius: 9999px;
+    width: 40% !important;/* Fondo blanco cuando se hace scroll */
 }
 
 .navmenu {
@@ -104,7 +138,7 @@ footer {
   position: absolute;
   width: 80px;
   height: 2px;
-  background-color: #1e1e24;
+  background-color: #fff;
   left: 0;
   top: 1rem;
 }
@@ -113,25 +147,24 @@ footer {
   margin-bottom: 2rem;
 }
 
-.btn {
+.btn-me {
   display: inline-block;
-  width: fit-content;
-  padding: 1rem;
-  border-radius: 0.5rem;
-  cursor: pointer;
-  color: #f7f7f2;
-  border: 1px solid #1e1e24;
-  font-weight: 500;
-  font-size: 12px;
-  text-align: center;
-  background: #1e1e24;
-  transition: all 0.5s;
+  padding: 1rem 1.5rem;
+  background-color: var(--main-color);
+  border-radius: 4rem;
+  color: var(--bg-color);
+  letter-spacing: .1rem;
+  font-weight: 600;
+  transition: .5s ease;
 }
 
 .btn:hover {
-  background: #f7f7f2;
-  color: #1e1e24;
-  transform: translateY(5px);
+  box-shadow: none;
+}
+
+.contact form .btn {
+  margin-top: 2rem;
+  cursor: pointer;
 }
 
 .socials-icons {

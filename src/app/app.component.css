@@ -2,19 +2,8 @@
   flex-basis: fit-content;
 }
 
-.navbar a {
-  color: black;
-  transition: color 0.3s;
-}
-
-.navbar li.active a {
-  color: red; /* Cambia esto al color que prefieras */
-}
-
-.navbar li.active {
-  color: red; /* Cambia esto al color que prefieras */
-}
-
 .proyectos {
  color: black !important
 }
+
+
