@@ -1,101 +1,155 @@
-<header>
-  <div id="navbar" class="navbar">
-    <!-- Dropdown para dispositivos móviles -->
-    <div class="navbar-start lg:hidden">
-      <div class="dropdown">
-        <label tabindex="0" class="btn btn-ghost lg:hidden">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            class="h-5 w-5"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
+<body>
+  <header>
+    <div class="navbar">
+      <!-- Dropdown para dispositivos móviles -->
+      <div class="navbar-start lg:hidden">
+        <div class="dropdown">
+          <label tabindex="0" class="btn btn-ghost lg:hidden">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-5 w-5"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4 6h16M4 12h16m-7 6h7"
+              />
+            </svg>
+          </label>
+          <ul
+            tabindex="0"
+            class="menu menu-compact menu-me dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
           >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M4 6h16M4 12h16m-7 6h7"
-            />
-          </svg>
-        </label>
-        <ul
-          tabindex="0"
-          class="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
-        >
-          <li><a (click)="scrollTo('me')">Home</a></li>
-          <li>
+            <li [class.active]="currentSection === 'me'">
+              <a (click)="scrollTo('me')">Home</a>
+            </li>
+            <li [class.active]="currentSection === 'projects'">
+              <details>
+                <summary>Proyectos</summary>
+                <ul class="p-2">
+                  <li><a>Janken101</a></li>
+                  <li><a>NRP</a></li>
+                  <li><a>Crystalite</a></li>
+                  <li><a>Submenu 4</a></li>
+                </ul>
+              </details>
+            </li>
+            <li [class.active]="currentSection === 'about'">
+              <a (click)="scrollTo('about')">About</a>
+            </li>
+            <li [class.active]="currentSection === 'contact'">
+              <a (click)="scrollTo('contact')">Contacto</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <!-- Navbar para pantallas grandes -->
+      <div class="navbar-center flex-1 justify-center hidden lg:flex">
+        <ul id="menu" class="menu menu-horizontal px-1">
+          <li [class.active]="currentSection === 'me'">
+            <a [routerLink]="['']" (click)="scrollTo('me')">Home</a>
+          </li>
+          <li [class.active]="currentSection === 'projects'">
             <details>
               <summary>Proyectos</summary>
               <ul class="p-2">
-                <li><a>Janken101</a></li>
-                <li><a>NRP</a></li>
-                <li><a>Crystalite</a></li>
-                <li><a>Submenu 4</a></li>
+                <li>
+                  <a [routerLink]="['/project', 1]" class="proyectos"
+                    >Janken101</a
+                  >
+                </li>
+                <li>
+                  <a [routerLink]="['/project', 2]" class="proyectos">NRP</a>
+                </li>
+                <li>
+                  <a [routerLink]="['/project', 3]" class="proyectos"
+                    >Crystalite</a
+                  >
+                </li>
+                <li>
+                  <a [routerLink]="['/project', 4]" class="proyectos"
+                    >Submenu 4</a
+                  >
+                </li>
               </ul>
             </details>
           </li>
-          <li><a (click)="scrollTo('about')">About</a></li>
-          <li><a (click)="scrollTo('contact')">Contacto</a></li>
+          <li [class.active]="currentSection === 'about'">
+            <a (click)="scrollTo('about')">About</a>
+          </li>
+          <li [class.active]="currentSection === 'contact'">
+            <a (click)="scrollTo('contact')">Contacto</a>
+          </li>
         </ul>
       </div>
     </div>
-    <!-- Navbar para pantallas grandes -->
-    <div class="navbar-center flex-1 justify-center hidden lg:flex">
-      <ul class="menu menu-horizontal px-1">
-        <li [class.active]="currentSection === 'me'">
-          <a (click)="scrollTo('me')">Home</a>
+  </header>
+
+  <main>
+    <div *ngIf="isHomePage">
+      <section id="home">
+        <app-home></app-home>
+      </section>
+      <section id="projects">
+        <app-projects></app-projects>
+      </section>
+      <section id="about">
+        <app-about></app-about>
+      </section>
+      <section id="contact">
+        <app-contact></app-contact>
+      </section>
+    </div>
+    <router-outlet *ngIf="!isHomePage"></router-outlet>
+  </main>
+
+  <footer>
+    <div
+      class="w-full mx-auto max-w-screen-xl p-4 md:flex md:items-center md:justify-between"
+    >
+      <span class="text-sm text-white sm:text-center dark:text-gray-400"
+        >© 2024
+        <a href="https://github.com/DavidSilvente" class="hover:underline"
+          >DavidSilvente</a
+        >. All Rights Reserved.
+      </span>
+      <ul
+        class="flex flex-wrap items-center mt-3 text-sm font-medium dark:text-gray-400 sm:mt-0"
+      >
+        <li>
+          <a
+          [routerLink]="['']"
+            (click)="scrollTo('me')"
+            class="cursor-pointer hover:underline me-4 md:me-6"
+            >Home</a
+          >
         </li>
-        <li [class.active]="currentSection === 'projects'">
-          <details>
-            <summary>Proyectos</summary>
-            <ul class="p-2">
-              <li><a class="proyectos">Janken101</a></li>
-              <li><a class="proyectos">NRP</a></li>
-              <li><a class="proyectos">Crystalite</a></li>
-              <li><a class="proyectos">Submenu 4</a></li>
-            </ul>
-          </details>
+        <li>
+          <a
+            (click)="scrollTo('projects')"
+            class="cursor-pointer hover:underline me-4 md:me-6"
+            >Proyectos</a
+          >
         </li>
-        <li [class.active]="currentSection === 'about'">
-          <a (click)="scrollTo('about')">About</a>
+        <li>
+          <a
+            (click)="scrollTo('about')"
+            class="cursor-pointer hover:underline me-4 md:me-6"
+            >About</a
+          >
         </li>
-        <li [class.active]="currentSection === 'contact'">
-          <a (click)="scrollTo('contact')">Contacto</a>
+        <li>
+          <a
+            (click)="scrollTo('contact')"
+            class="cursor-pointer hover:underline me-4 md:me-6"
+            >Contacto</a
+          >
         </li>
       </ul>
     </div>
-  </div>
-</header>
-
-<body><app-home></app-home></body>
-
-<footer>
-  <div
-    class="w-full mx-auto max-w-screen-xl p-4 md:flex md:items-center md:justify-between"
-  >
-    <span class="text-sm text-white sm:text-center dark:text-gray-400"
-      >© 2024
-      <a href="https://github.com/DavidSilvente" class="hover:underline">DavidSilvente</a>. All
-      Rights Reserved.
-    </span>
-    <ul
-      class="flex flex-wrap items-center mt-3 text-sm font-medium dark:text-gray-400 sm:mt-0"
-    >
-      <li>
-        <a (click)="scrollTo('me')" class="cursor-pointer hover:underline me-4 md:me-6">Home</a>
-      </li>
-      <li>
-        <a (click)="scrollTo('projects')" class="cursor-pointer hover:underline me-4 md:me-6">Proyectos</a>
-      </li>
-      <li>
-        <a (click)="scrollTo('about')" class="cursor-pointer hover:underline me-4 md:me-6">About</a>
-      </li>
-      <li>
-        <a (click)="scrollTo('contact')" class="cursor-pointer hover:underline me-4 md:me-6">Contacto</a>
-      </li>
-    </ul>
-  </div>
-</footer>
-
-
+  </footer>
+</body>

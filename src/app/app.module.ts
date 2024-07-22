@@ -12,6 +12,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { ProjectCardComponent } from './projects/project-card/project-card.component';
 import { CorreoService } from './correo.service';
 import { MessageSuccessFailComponent } from './message-success-fail/message-success-fail.component';
+import { ProjectPageComponent } from './projects/project-page/project-page.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { MessageSuccessFailComponent } from './message-success-fail/message-succ
     ContactComponent,
     ProjectCardComponent,
     MessageSuccessFailComponent,
+    ProjectPageComponent,
   ],
   imports: [
     BrowserModule,

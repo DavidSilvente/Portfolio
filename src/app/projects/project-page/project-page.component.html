@@ -1,0 +1,51 @@
+<div class="w-full">
+  <div class=" h-[50vh] relative">
+    <div class="absolute top-0 left-0 w-full h-[50vh] bg-black/70 z-10"></div>
+    <video src="assets/aa.mp4" autoplay loop muted class="relative object-cover w-full h-full"></video>
+    <div class="absolute top-[70%] max-w-[1240px] w-full left-[50%] right-[50%] mamba-x mamba-y text-white z-10 p-2">
+      <h2 class="py-2">{{ projectName }}</h2>
+      <h3>{{ projectSubtitle }}</h3>
+    </div>
+  </div>
+  <div class="max-w-[1240px] mx-auto p-2 grid md:grid-cols-5 gap-8 py-8">
+    <div class="col-span-4">
+      <h2><span>Project</span></h2>
+      <h3><span>Descripción</span></h3>
+      <p>{{ projectDescription }}</p>
+      <div class="flex items-center gap-3 sm:gap-x-5">
+        <a
+
+          role="link"
+          class="inline-flex items-center justify-center gap-2 px-3 py-2 space-x-2 text-base text-white transition bg-gray-800 border border-gray-600 focus-visible:ring-yellow-500/80 text-md hover:bg-gray-800 hover:border-gray-900 group max-w-fit rounded-xl hover:text-white focus:outline-none focus-visible:outline-none focus-visible:ring focus-visible:ring-white focus-visible:ring-offset-2 active:bg-black"
+        >
+          <img src="assets/github.svg">
+          Code
+        </a>
+        <a
+          role="link"
+          class="inline-flex items-center justify-center gap-2 px-3 py-2 space-x-2 text-base text-white transition bg-gray-800 border border-gray-600 focus-visible:ring-yellow-500/80 text-md hover:bg-gray-800 hover:border-gray-900 group max-w-fit rounded-xl hover:text-white focus:outline-none focus-visible:outline-none focus-visible:ring focus-visible:ring-white focus-visible:ring-offset-2 active:bg-black"
+        >
+          <img src="assets/preview.svg">
+          Preview
+        </a>
+      </div>
+    </div>
+    <div style="background-color: #323946;" class="col-span-4 md:col-span-1 shadow-xl shadow-gray-600 rounded-xl py-4">
+      <div class="p-2">
+        <p class="text-center font-bold pb-2">Technologies</p>
+        <div class="grid grid-cols-3 md:grid-cols-1">
+          <p class="py-2 flex items-center"><i class="pr-1"></i> React JS</p>
+          <p class="py-2 flex items-center"><i class="pr-1"></i> Tailwind</p>
+          <p class="py-2 flex items-center"><i class="pr-1"></i>dsasda</p>
+          <p class="py-2 flex items-center"><i class="pr-1"></i> Vercel</p>
+          <p class="py-2 flex items-center"><i class="pr-1"></i> Toastify</p>
+        </div>
+      </div>
+    </div>
+    <a aria-label="Return to projects Page" href="/#projects">
+      <button aria-label="Return to projects" class="px-8 py-3">
+        <i class="fas fa-arrow-left"></i>
+      </button>
+    </a>
+  </div>
+</div>

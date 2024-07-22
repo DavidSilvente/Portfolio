@@ -5,6 +5,7 @@
 
 html {
   scroll-behavior: smooth;
+
 }
 
 * {
@@ -56,13 +57,21 @@ span {
   color: var(--main-color);
 }
 
+.projects {
+  background-color: #323946;
+}
+
+.contact {
+  background-color: #323946;
+}
+
 .navbar a {
-  color: var(--text-color);
+  color: var(--text-color) !important;
   transition: .3s;
 }
 
 .navbar li.active a, .navbar li.active {
-  color: var(--main-color); /* Cambia esto al color que prefieras */
+  color: var(--main-color) !important; /* Cambia esto al color que prefieras */
 }
 
 
@@ -87,7 +96,10 @@ span {
 .bg-black {
     background-color: black !important;
     border-radius: 9999px;
-    width: 40% !important;/* Fondo blanco cuando se hace scroll */
+}
+
+.menu-me {
+  background-color: black;
 }
 
 .navmenu {
