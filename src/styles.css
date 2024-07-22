@@ -18,8 +18,8 @@ html {
 }
 
 body {
-    background-color: #1f242d;
-    color: #fff;
+    background-color: var(--bg-color);
+    color: var(--text-color);
 }
 
 header {
@@ -42,15 +42,26 @@ footer {
   align-items: center;
   justify-content: center;
   padding: 1.5rem 8rem;
-  background-color: #1f242d;
-  color: #fff;
+  background-color: var(--bg-color);
+  color: var(--text-color);
 }
 
 :root {
   --bg-color: #1f242d;
-  --secong-bg-color: #323946;
+  --second-bg-color: #323946;
   --text-color: #fff;
   --main-color: #C70039;
+  --color-icon: #1e1e24;
+  --navbar-color: #111
+}
+
+[data-theme="light"] {
+  --bg-color: #fff; /* Modo claro */
+  --second-bg-color: #f0f0f0;
+  --text-color: #000;
+  --main-color: #007BFF;
+  --color-icon: #9c118a;
+  --navbar-color: #fff
 }
 
 span {
@@ -58,11 +69,15 @@ span {
 }
 
 .projects {
-  background-color: #323946;
+  background-color: var(--second-bg-color);
+}
+
+.text-footer {
+  color: var(--text-color);
 }
 
 .contact {
-  background-color: #323946;
+  background-color: var(--second-bg-color)
 }
 
 .navbar a {
@@ -81,20 +96,20 @@ span {
 }
 
 .logo {
-  color: #1e1e24;
+  color: var(--color-icon);
   font-size: 1.2rem;
   font-weight: 600;
 }
 
 
 .bg-white {
-  background-color: white !important;
+  background-color: var(--navbar-color) !important;
   border-radius: 9999px;
   width: 40% !important;/* Fondo blanco cuando se hace scroll */
 }
 
 .bg-black {
-    background-color: black !important;
+    background-color: var(--navbar-color) !important;
     border-radius: 9999px;
 }
 
@@ -109,7 +124,7 @@ span {
 .navmenu a {
   display: inline-block;
   margin: 0 1.5rem;
-  color: #1e1e24;
+  color: var(--color-icon);
   font-weight: 500;
   transition: all 0.6s;
 }
@@ -150,7 +165,7 @@ span {
   position: absolute;
   width: 80px;
   height: 2px;
-  background-color: #fff;
+  background-color: var(--text-color);
   left: 0;
   top: 1rem;
 }
@@ -188,7 +203,7 @@ span {
 .socials-icons i {
   display: block;
   margin: 25px 0;
-  color: #1e1e24;
+  color: var(--color-icon);
   font-size: 1.5rem;
   transition: all 0.6s;
 }
@@ -204,7 +219,7 @@ span {
 }
 
 .scroll-btn i {
-  color: #1e1e24;
+  color: var(--color-icon);
   font-weight: 600;
   display: flex;
   align-items: center;
@@ -303,5 +318,36 @@ span {
   .scroll-btn {
       bottom: 5%;
       left: 5%;
+  }
+  @media (max-width: 576px) {
+    footer {
+      flex-direction: column;
+      padding: 1.5rem 2rem;
+    }
+    footer span {
+      margin-bottom: 1rem;
+    }
+    footer ul {
+      justify-content: center;
+    }
+    footer ul li {
+      margin-bottom: 0.5rem;
+    }
+  }
+
+  @media (max-width: 768px) {
+    footer {
+      flex-direction: column;
+      padding: 1.5rem 2rem;
+    }
+    footer span {
+      margin-bottom: 1rem;
+    }
+    footer ul {
+      justify-content: center;
+    }
+    footer ul li {
+      margin-bottom: 0.5rem;
+    }
   }
 }

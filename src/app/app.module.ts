@@ -13,6 +13,8 @@ import { ProjectCardComponent } from './projects/project-card/project-card.compo
 import { CorreoService } from './correo.service';
 import { MessageSuccessFailComponent } from './message-success-fail/message-success-fail.component';
 import { ProjectPageComponent } from './projects/project-page/project-page.component';
+import { ThemeToggleComponent } from './theme-toggle/theme-toggle.component';
+import { ThemeService } from './theme.service';
 
 @NgModule({
   declarations: [
@@ -24,6 +26,7 @@ import { ProjectPageComponent } from './projects/project-page/project-page.compo
     ProjectCardComponent,
     MessageSuccessFailComponent,
     ProjectPageComponent,
+    ThemeToggleComponent,
   ],
   imports: [
     BrowserModule,
@@ -32,7 +35,9 @@ import { ProjectPageComponent } from './projects/project-page/project-page.compo
     HttpClientModule,
     ReactiveFormsModule
   ],
-  providers: [CorreoService],
+  providers: [CorreoService,
+    ThemeService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
