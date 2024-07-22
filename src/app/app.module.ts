@@ -15,6 +15,7 @@ import { MessageSuccessFailComponent } from './message-success-fail/message-succ
 import { ProjectPageComponent } from './projects/project-page/project-page.component';
 import { ThemeToggleComponent } from './theme-toggle/theme-toggle.component';
 import { ThemeService } from './theme.service';
+import { ɵBrowserAnimationBuilder } from '@angular/animations';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { ThemeService } from './theme.service';
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    
   ],
   providers: [CorreoService,
     ThemeService
