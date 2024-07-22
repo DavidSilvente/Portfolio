@@ -28,15 +28,7 @@
               <a (click)="scrollTo('me')">Home</a>
             </li>
             <li [class.active]="currentSection === 'projects'">
-              <details>
-                <summary>Proyectos</summary>
-                <ul class="p-2">
-                  <li><a>Janken101</a></li>
-                  <li><a>NRP</a></li>
-                  <li><a>Crystalite</a></li>
-                  <li><a>Submenu 4</a></li>
-                </ul>
-              </details>
+              <a (click)="scrollTo('projects')">Proyectos</a>
             </li>
             <li [class.active]="currentSection === 'about'">
               <a (click)="scrollTo('about')">About</a>
@@ -51,32 +43,10 @@
       <div class="navbar-center flex-1 justify-center hidden lg:flex">
         <ul id="menu" class="menu menu-horizontal px-1">
           <li [class.active]="currentSection === 'me'">
-            <a [routerLink]="['']" (click)="scrollTo('me')">Home</a>
+            <a (click)="scrollTo('me')">Home</a>
           </li>
           <li [class.active]="currentSection === 'projects'">
-            <details>
-              <summary>Proyectos</summary>
-              <ul class="p-2">
-                <li>
-                  <a [routerLink]="['/project', 1]" class="proyectos"
-                    >Janken101</a
-                  >
-                </li>
-                <li>
-                  <a [routerLink]="['/project', 2]" class="proyectos">NRP</a>
-                </li>
-                <li>
-                  <a [routerLink]="['/project', 3]" class="proyectos"
-                    >Crystalite</a
-                  >
-                </li>
-                <li>
-                  <a [routerLink]="['/project', 4]" class="proyectos"
-                    >Submenu 4</a
-                  >
-                </li>
-              </ul>
-            </details>
+            <a (click)="scrollTo('projects')">Proyectos</a>
           </li>
           <li [class.active]="currentSection === 'about'">
             <a (click)="scrollTo('about')">About</a>
@@ -122,7 +92,6 @@
       >
         <li>
           <a
-          [routerLink]="['']"
             (click)="scrollTo('me')"
             class="cursor-pointer hover:underline me-4 md:me-6"
             >Home</a
