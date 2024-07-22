@@ -1,4 +1,4 @@
-<body >
+<body>
   <header>
     <div class="navbar">
       <!-- Dropdown para dispositivos móviles -->
@@ -24,17 +24,21 @@
             tabindex="0"
             class="menu menu-compact menu-me dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
           >
-            <li [class.active]="currentSection === 'me'">
-              <a (click)="scrollTo('me')">Home</a>
-            </li>
-            <li [class.active]="currentSection === 'projects'">
-              <a (click)="scrollTo('projects')">Proyectos</a>
-            </li>
-            <li [class.active]="currentSection === 'about'">
-              <a (click)="scrollTo('about')">About</a>
-            </li>
-            <li [class.active]="currentSection === 'contact'">
-              <a (click)="scrollTo('contact')">Contacto</a>
+          <li [class.active]="currentSection === 'me'">
+            <a (click)="scrollTo('me')">{{ 'HOME' | translate }}</a>
+          </li>
+          <li [class.active]="currentSection === 'projects'">
+            <a (click)="scrollTo('projects')">{{ 'PROJECTS' | translate }}</a>
+          </li>
+          <li [class.active]="currentSection === 'about'">
+            <a (click)="scrollTo('about')">{{ 'ABOUT' | translate }}</a>
+          </li>
+          <li [class.active]="currentSection === 'contact'">
+            <a (click)="scrollTo('contact')">{{ 'CONTACT' | translate }}</a>
+          </li>
+            <li><app-theme-toggle></app-theme-toggle></li>
+            <li>
+              <a (click)="switchLanguage()">  {{ currentLang === 'es' ? 'ES' : 'EN' }}</a>
             </li>
           </ul>
         </div>
@@ -43,16 +47,19 @@
       <div class="navbar-center flex-1 justify-center hidden lg:flex">
         <ul id="menu" class="menu menu-horizontal px-1">
           <li [class.active]="currentSection === 'me'">
-            <a (click)="scrollTo('me')">Home</a>
+            <a (click)="scrollTo('me')">{{ 'HOME' | translate }}</a>
           </li>
           <li [class.active]="currentSection === 'projects'">
-            <a (click)="scrollTo('projects')">Proyectos</a>
+            <a (click)="scrollTo('projects')">{{ 'PROJECTS' | translate }}</a>
           </li>
           <li [class.active]="currentSection === 'about'">
-            <a (click)="scrollTo('about')">About</a>
+            <a (click)="scrollTo('about')">{{ 'ABOUT' | translate }}</a>
           </li>
           <li [class.active]="currentSection === 'contact'">
-            <a (click)="scrollTo('contact')">Contacto</a>
+            <a (click)="scrollTo('contact')">{{ 'CONTACT' | translate }}</a>
+          </li>
+          <li>
+            <a (click)="switchLanguage()">  {{ currentLang === 'es' ? 'ES' : 'EN' }}</a>
           </li>
           <li><app-theme-toggle></app-theme-toggle></li>
         </ul>
@@ -80,8 +87,10 @@
 
   <footer>
     <div
-    class="rounded-lg w-full max-w-screen-xl mx-auto md:flex md:items-center md:justify-between py-4">
-      <span class="text-sm text-footer sm:text-center dark:text-gray-400">© 2024
+      class="rounded-lg w-full max-w-screen-xl mx-auto md:flex md:items-center md:justify-between py-4"
+    >
+      <span class="text-sm text-footer sm:text-center dark:text-gray-400"
+        >© 2024
         <a href="https://github.com/DavidSilvente" class="hover:underline"
           >DavidSilvente</a
         >. All Rights Reserved.
@@ -89,34 +98,18 @@
       <ul
         class="flex flex-wrap items-center mt-3 text-sm font-medium dark:text-gray-400 sm:mt-0"
       >
-        <li>
-          <a
-            (click)="scrollTo('me')"
-            class="cursor-pointer hover:underline me-4 md:me-6"
-            >Home</a
-          >
-        </li>
-        <li>
-          <a
-            (click)="scrollTo('projects')"
-            class="cursor-pointer hover:underline me-4 md:me-6"
-            >Proyectos</a
-          >
-        </li>
-        <li>
-          <a
-            (click)="scrollTo('about')"
-            class="cursor-pointer hover:underline me-4 md:me-6"
-            >About</a
-          >
-        </li>
-        <li>
-          <a
-            (click)="scrollTo('contact')"
-            class="cursor-pointer hover:underline me-4 md:me-6"
-            >Contacto</a
-          >
-        </li>
+      <li>
+        <a (click)="scrollTo('me')" class="cursor-pointer hover:underline me-4 md:me-6">{{ 'HOME' | translate }}</a>
+      </li>
+      <li>
+        <a (click)="scrollTo('projects')" class="cursor-pointer hover:underline me-4 md:me-6">{{ 'PROJECTS' | translate }}</a>
+      </li>
+      <li>
+        <a (click)="scrollTo('about')" class="cursor-pointer hover:underline me-4 md:me-6">{{ 'ABOUT' | translate }}</a>
+      </li>
+      <li>
+        <a (click)="scrollTo('contact')" class="cursor-pointer hover:underline me-4 md:me-6">{{ 'CONTACT' | translate }}</a>
+      </li>
       </ul>
     </div>
   </footer>

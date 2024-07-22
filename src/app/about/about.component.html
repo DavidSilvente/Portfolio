@@ -1,43 +1,27 @@
 <div class="container px-6 py-10 mx-auto">
-  <h1
-    class="text-2xl font-semibold text-center capitalize lg:text-3xl dark:text-white"
-  >
-    About
+  <h1 class="text-2xl font-semibold text-center capitalize lg:text-3xl dark:text-white">
+    {{ 'ABOUT' | translate }}
   </h1>
   <div class="lg:flex gap-8 mt-8 xl:mt-12 xl:gap-12">
-    <div
-      class="flex items-center justify-center w-full px-6 py-8 lg:h-[32rem] lg:w-1/2"
-    >
+    <div class="flex items-center justify-center w-full px-6 py-8 lg:h-[32rem] lg:w-1/2">
       <div class="max-w-xl">
-        <h2
-          class="text-3xl font-semibold dark:text-white lg:text-4xl"
-        >
-          ¡Hola! Mi nombre es
-          <span>David Silvente</span>
+        <h2 class="text-3xl font-semibold dark:text-white lg:text-4xl">
+          {{ 'HELLO' | translate }} <span>{{ 'NAME' | translate }}</span>
         </h2>
         <p class="mt-4 text-sm dark:text-gray-400 lg:text-base">
-          Soy estudiante de Ingeniería Informática en la Universidad de Almería
-          aunque actualmente estoy trabajando para Viewnext gestionando bases de
-          datos en entornos bancarios (fintech).
+          {{ 'INTRO' | translate }}
         </p>
         <p class="mt-4 text-sm dark:text-gray-400 lg:text-base">
-          Entre mis proyectos destaca una web basada en el juego de piedra,
-          papel o tijera. En mi
-          <a href="https://github.com/DavidSilvente"
-            ><span><strong>Github</strong></span></a
-          >
-          puedes encontras diversos proyectos que reflejan mi pasión y
-          experiencia.
+          {{ 'DESCRIPTION' | translate }}
+          <a href="https://github.com/DavidSilvente">
+            <span><strong>{{ 'GITHUB' | translate }}</strong></span>
+          </a>
+          {{ 'FIND_PROJECTS' | translate }}
         </p>
       </div>
     </div>
     <div class="w-full h-64 lg:w-1/2 lg:h-auto">
-      <div
-        class="w-full h-full bg-cover"
-        style="
-          background-image: url(https://images.unsplash.com/photo-1508394522741-82ac9c15ba69?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=748&q=80);
-        "
-      >
+      <div class="w-full h-full bg-cover" style="background-image: url(https://images.unsplash.com/photo-1508394522741-82ac9c15ba69?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=748&q=80);">
       </div>
     </div>
   </div>
