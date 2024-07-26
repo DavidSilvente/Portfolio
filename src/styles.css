@@ -56,10 +56,12 @@ footer {
 }
 
 [data-theme="light"] {
-  --bg-color: #fff; /* Modo claro */
-  --second-bg-color: #f0f0f0;
+  --bg-color: #e6e6ff ; /* Modo claro */
+  --second-bg-color: #f0f0ff  ;
   --text-color: #000;
-  --main-color: #007BFF;
+  --main-color-rgb: 234, 179, 8;
+  --main-color-opacity: 0.8; /* Opacidad completa */
+  --main-color: rgba(var(--main-color-rgb), var(--main-color-opacity));
   --color-icon: #9c118a;
   --navbar-color: #fff
 }
@@ -179,7 +181,7 @@ span {
   padding: 1rem 1.5rem;
   background-color: var(--main-color);
   border-radius: 4rem;
-  color: var(--bg-color);
+  color: var(--text-color);
   letter-spacing: .1rem;
   font-weight: 600;
   transition: .5s ease;
