@@ -51,7 +51,7 @@ Con Vercel, he aprendido cómo automatizar el despliegue de mi proyecto cada vez
 ## Autor ✒️
 **David Silvente Galera**
 
-* [micorreo@midominio.com](micorreo@midominio.com)
+* [dsilvente2@gmail.com](mailto:dsilvente2@gmail.com)
 * [LinkedIn](https://www.linkedin.com/in/tu-url-de-linkedin/)
 * [Porfolio web](https://tu-dominio.com/)
   
