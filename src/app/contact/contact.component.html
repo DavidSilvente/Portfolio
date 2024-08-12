@@ -8,7 +8,7 @@
 
   <form (ngSubmit)="enviarCorreo(contactoForm)" #contactoForm="ngForm" class="max-w-sm mx-auto">
     <div class="mb-5">
-      <label for="nombre" class="block mb-2 text-sm font-medium dark:text-white">{{ 'NAME' | translate }}:</label>
+      <label for="nombre" class="block mb-2 text-sm font-medium dark:text-white">{{ 'NAME_CONTACT' | translate }}:</label>
       <input type="text" id="nombre" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" required [(ngModel)]="contacto.nombre" name="nombre" #nombre="ngModel"/>
       <div *ngIf="nombre.invalid && nombre.touched" class="error text-red-500 text-sm mt-1">
         {{ 'NAME_REQUIRED' | translate }}

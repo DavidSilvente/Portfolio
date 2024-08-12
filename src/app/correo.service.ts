@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 })
 export class CorreoService {
 
-  private apiUrl = 'http://localhost:3000/enviar'; // Reemplaza con tu URL real
+  private apiUrl = '/api/enviar'; // Usamos la ruta relativa para la función serverless en Vercel
 
   constructor(private http: HttpClient) { }
 
