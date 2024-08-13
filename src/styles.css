@@ -119,6 +119,10 @@ span {
   background-color: black;
 }
 
+.menu-spb {
+  padding-bottom: 0 !important;
+}
+
 .navmenu {
   display: flex;
 }
@@ -167,7 +171,7 @@ span {
   position: absolute;
   width: 80px;
   height: 2px;
-  background-color: var(--text-color);
+  background-color: white;
   left: 0;
   top: 1rem;
 }
