@@ -6,5 +6,36 @@
  color: black !important
 }
 
+.full-screen-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  display: none;
+  background-color: rgba(0, 0, 0, 0.8);
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  backdrop-filter: blur(8px);
+}
+
+.full-screen-menu.active {
+  display: flex;
+}
+
+.full-screen-menu li {
+  margin: 20px 0;
+}
+
+.full-screen-menu a {
+  font-size: 24px;
+  text-transform: uppercase;
+}
+
+body.menu-active {
+  overflow: hidden;
+}
 
 

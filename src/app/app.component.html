@@ -4,7 +4,7 @@
       <!-- Dropdown para dispositivos móviles -->
       <div class="navbar-start lg:hidden">
         <div class="dropdown">
-          <label tabindex="0" class="btn btn-ghost lg:hidden">
+          <label tabindex="0" class="btn btn-ghost lg:hidden" (click)="toggleMenu()">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               class="h-5 w-5"
@@ -20,29 +20,31 @@
               />
             </svg>
           </label>
+          <div class="main-content">
           <ul
-            tabindex="0"
-            class="menu menu-compact menu-me dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
+            [class.active]="menuActive"
+            class="menu menu-compact menu-me dropdown-content full-screen-menu p-2 shadow bg-base-100"
           >
           <li [class.active]="currentSection === 'me'">
-            <a (click)="scrollTo('me')">{{ 'HOME' | translate }}</a>
+            <a (click)="handleMenuClick('me')">{{ 'HOME' | translate }}</a>
           </li>
           <li [class.active]="currentSection === 'projects'">
-            <a (click)="scrollTo('projects')">{{ 'PROJECTS' | translate }}</a>
+            <a (click)="handleMenuClick('projects')">{{ 'PROJECTS' | translate }}</a>
           </li>
           <li [class.active]="currentSection === 'about'">
-            <a (click)="scrollTo('about')">{{ 'ABOUT' | translate }}</a>
+            <a (click)="handleMenuClick('about')">{{ 'ABOUT' | translate }}</a>
           </li>
           <li [class.active]="currentSection === 'contact'">
-            <a (click)="scrollTo('contact')">{{ 'CONTACT' | translate }}</a>
+            <a (click)="handleMenuClick('contact')">{{ 'CONTACT' | translate }}</a>
           </li>
-            <li><app-theme-toggle></app-theme-toggle></li>
-            <li>
-              <a (click)="switchLanguage()">  {{ currentLang === 'es' ? 'ES' : 'EN' }}</a>
-            </li>
+          <li>
+            <a (click)="switchLanguage()">  {{ currentLang === 'es' ? 'ES' : 'EN' }}</a>
+          </li>
           </ul>
         </div>
+        </div>
       </div>
+
       <!-- Navbar para pantallas grandes -->
       <div class="navbar-center flex-1 justify-center hidden lg:flex">
         <ul id="menu" class="menu menu-horizontal menu-spb px-1">

@@ -1,4 +1,4 @@
-import { Component, HostListener } from '@angular/core';
+import { Component, ElementRef, HostListener, Renderer2 } from '@angular/core';
 import { NavigationEnd, Router } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
 
@@ -12,8 +12,9 @@ export class AppComponent {
   currentSection: string = 'me';
   isHomePage: boolean = true;
   currentLang: string = 'es';
+  menuActive: boolean = false;
 
-  constructor(private router: Router, private translate: TranslateService) {
+  constructor(private router: Router, private translate: TranslateService, private elementRef: ElementRef, private renderer: Renderer2) {
     // Suscribirse a los eventos de navegación para determinar la ruta actual
     this.router.events.subscribe(event => {
       if (event instanceof NavigationEnd) {
@@ -27,7 +28,34 @@ export class AppComponent {
 
   ngOnInit(): void {}
 
+  toggleMenu() {
+    this.menuActive = !this.menuActive;
+
+    if (this.menuActive) {
+      document.body.classList.add('menu-active');
+    } else {
+      document.body.classList.remove('menu-active');
+    }
+
+  }
+
+  handleMenuClick(action: string) {
+    if (['me', 'projects', 'about', 'contact'].includes(action)) {
+      this.scrollTo(action);
+    } else {
+      this.closeMenu();
+    }
+  }
+
+  closeMenu() {
+    console.log('Closing menu');
+    this.menuActive = false;
+    this.renderer.setStyle(document.body, 'overflow', 'auto');
+  }
+
   scrollTo(section: string) {
+    this.menuActive = false;
+    document.body.style.overflow = 'auto';
     const element = document.getElementById(section);
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
@@ -37,6 +65,18 @@ export class AppComponent {
   switchLanguage() {
     this.currentLang = this.currentLang === 'es' ? 'en' : 'es';
     this.translate.use(this.currentLang);
+    this.menuActive = false;
+    document.body.style.overflow = 'auto';
+  }
+
+  @HostListener('document:click', ['$event'])
+  onDocumentClick(event: MouseEvent): void {
+    const targetElement = event.target as HTMLElement;
+    console.log('Document clicked', targetElement);
+
+    if (this.menuActive && !this.elementRef.nativeElement.contains(targetElement)) {
+      this.closeMenu();
+    }
   }
 
   @HostListener('window:scroll', [])

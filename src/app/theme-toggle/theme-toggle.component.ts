@@ -1,5 +1,5 @@
 // theme-toggle.component.ts
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { ThemeService } from '../theme.service';
 
 @Component({
